@@ -37,6 +37,12 @@ public class Product {
 
     private LocalDate sellerReturnDate;
 
+    private Integer quantity;
+
+    private Long sellerId;
+
+    private String country;
+
     private String productImageUrl;
 
     public Product() {}
@@ -49,12 +55,16 @@ public class Product {
         this.sellerReturnDate = sellerReturnDate;
     }
 
-    public Product(String productName, String productDescription, Long price, LocalDate openPreOrderLimit, LocalDate sellerReturnDate, String productImageUrl) {
+    public Product(String productName, String productDescription, Long price, LocalDate openPreOrderDate,
+                   LocalDate sellerReturnDate, Integer quantity, Long sellerId, String country, String productImageUrl) {
         this.productName = productName;
         this.productDescription = productDescription;
         this.price = price;
-        this.openPreOrderDate = openPreOrderLimit;
+        this.openPreOrderDate = openPreOrderDate;
         this.sellerReturnDate = sellerReturnDate;
+        this.quantity = quantity;
+        this.sellerId = sellerId;
+        this.country = country;
         this.productImageUrl = productImageUrl;
     }
 
@@ -155,6 +165,60 @@ public class Product {
      */
     public void setSellerReturnDate(LocalDate sellerReturnDate) {
         this.sellerReturnDate = sellerReturnDate;
+    }
+
+    /**
+     * Getter method for property quantity.
+     *
+     * @return property value of quantity
+     */
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    /**
+     * Setter method for property quantity.
+     *
+     * @param quantity value to be assigned to property quantity
+     */
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
+    /**
+     * Getter method for property sellerId.
+     *
+     * @return property value of sellerId
+     */
+    public Long getSellerId() {
+        return sellerId;
+    }
+
+    /**
+     * Setter method for property sellerId.
+     *
+     * @param sellerId value to be assigned to property sellerId
+     */
+    public void setSellerId(Long sellerId) {
+        this.sellerId = sellerId;
+    }
+
+    /**
+     * Getter method for property country.
+     *
+     * @return property value of country
+     */
+    public String getCountry() {
+        return country;
+    }
+
+    /**
+     * Setter method for property country.
+     *
+     * @param country value to be assigned to property country
+     */
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     /**

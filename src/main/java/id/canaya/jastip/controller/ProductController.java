@@ -32,8 +32,13 @@ public class ProductController {
     }
 
     @GetMapping(path = "newest")
-    public List<Product> getNewestProduct(@RequestParam(value = "itemListSize", defaultValue = "10") Integer itemListSize) {
+    public List<Product> getNewestProducts(@RequestParam(value = "itemListSize", defaultValue = "5") Integer itemListSize) {
         return productService.getNewestProducts(itemListSize);
+    }
+
+    @GetMapping(path = "popular")
+    public List<Product> getMostPopularProducts() {
+        return productService.getMostPopularProducts();
     }
 
     @GetMapping(path = "product")

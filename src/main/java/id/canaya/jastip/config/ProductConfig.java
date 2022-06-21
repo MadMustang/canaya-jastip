@@ -37,7 +37,7 @@ public class ProductConfig {
                     LocalDate.parse("2022-07-07"),
                     LocalDate.parse("2022-07-11")
             );
-            productRepository.saveAll(Arrays.asList(shoe, hat));
+            productRepository.saveAll(Arrays.asList(hat, shoe));
         };
     }
 }

@@ -9,6 +9,7 @@ import id.canaya.jastip.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -40,7 +41,11 @@ public class ProductService {
                 .collect(Collectors.toList());
     }
 
-    public List<Product> getNewestProducts() {
-        return productRepository.findAll();
+    public List<Product> getMostPopularProducts() {
+        return productRepository.findAll()
+                .stream()
+                .sorted(Comparator.comparing(Product::getProductName))
+                .limit(10)
+                .collect(Collectors.toList());
     }
 }
