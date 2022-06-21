@@ -15,4 +15,6 @@ public class RequestMappingConstants {
     private static final String     API_PREFIX              = "api/" + API_VERSION + "/";
 
     public static final String      PRODUCT_CONTROLLER      = API_PREFIX + "products";
+
+    public static final String      FEED_CONTROLLER         = API_PREFIX + "feed";
 }
