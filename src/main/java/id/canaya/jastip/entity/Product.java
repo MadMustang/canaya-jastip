@@ -13,7 +13,7 @@ import java.time.LocalDate;
  */
 @Entity
 @Table
-public class ProductDO {
+public class Product {
 
     @Id
     @SequenceGenerator(
@@ -39,9 +39,9 @@ public class ProductDO {
 
     private String productImageUrl;
 
-    public ProductDO() {}
+    public Product() {}
 
-    public ProductDO(String productName, String productDescription, Double price, LocalDate openPreOrderLimit, LocalDate sellerReturnDate) {
+    public Product(String productName, String productDescription, Double price, LocalDate openPreOrderLimit, LocalDate sellerReturnDate) {
         this.productName = productName;
         this.productDescription = productDescription;
         this.price = price;
@@ -49,7 +49,7 @@ public class ProductDO {
         this.sellerReturnDate = sellerReturnDate;
     }
 
-    public ProductDO(String productName, String productDescription, Double price, LocalDate openPreOrderLimit, LocalDate sellerReturnDate, String productImageUrl) {
+    public Product(String productName, String productDescription, Double price, LocalDate openPreOrderLimit, LocalDate sellerReturnDate, String productImageUrl) {
         this.productName = productName;
         this.productDescription = productDescription;
         this.price = price;

@@ -4,7 +4,7 @@
  */
 package id.canaya.jastip.config;
 
-import id.canaya.jastip.entity.ProductDO;
+import id.canaya.jastip.entity.Product;
 import id.canaya.jastip.repository.ProductRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -23,14 +23,14 @@ public class ProductConfig {
     @Bean
     CommandLineRunner productDataInitializer(ProductRepository productRepository) {
         return args -> {
-            ProductDO shoe = new ProductDO(
+            Product shoe = new Product(
                     "Adidas All-Star",
                     "Adidas shoes blyat",
                     10000.0,
                     LocalDate.parse("2022-07-07"),
                     LocalDate.parse("2022-07-11")
                     );
-            ProductDO hat = new ProductDO(
+            Product hat = new Product(
                     "Adidas Hat",
                     "Adidas hat blyat",
                     10000.0,

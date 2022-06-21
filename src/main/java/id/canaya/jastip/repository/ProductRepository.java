@@ -4,7 +4,7 @@
  */
 package id.canaya.jastip.repository;
 
-import id.canaya.jastip.entity.ProductDO;
+import id.canaya.jastip.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
  * @version $Id: ProductRepository.java, v 0.1 2022‐06‐21 11.16 Rionaldy "Roy" Triantoro Exp $$
  */
 @Repository
-public interface ProductRepository extends JpaRepository<ProductDO, Long> {
+public interface ProductRepository extends JpaRepository<Product, Long> {
 
 
 }
