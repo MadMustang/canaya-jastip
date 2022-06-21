@@ -26,14 +26,14 @@ public class ProductConfig {
             Product shoe = new Product(
                     "Adidas All-Star",
                     "Adidas shoes blyat",
-                    10000.0,
+                    10000L,
                     LocalDate.parse("2022-07-07"),
                     LocalDate.parse("2022-07-11")
                     );
             Product hat = new Product(
                     "Adidas Hat",
                     "Adidas hat blyat",
-                    10000.0,
+                    10000L,
                     LocalDate.parse("2022-07-07"),
                     LocalDate.parse("2022-07-11")
             );

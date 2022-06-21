@@ -33,15 +33,30 @@ public class User {
 
     private String name;
 
-    private Double balance;
+    private String location;
+
+    private String rating;
+
+    private String lastOnline;
+
+    private Long balance;
 
     private String imageUrl;
 
     public User() {}
 
-    public User(String name, Double balance) {
+    public User(String name, Long balance) {
         this.name = name;
         this.balance = balance;
+    }
+
+    public User(String name, String location, String rating, String lastOnline, Long balance, String imageUrl) {
+        this.name = name;
+        this.location = location;
+        this.rating = rating;
+        this.lastOnline = lastOnline;
+        this.balance = balance;
+        this.imageUrl = imageUrl;
     }
 
     /**
@@ -72,11 +87,65 @@ public class User {
     }
 
     /**
+     * Getter method for property location.
+     *
+     * @return property value of location
+     */
+    public String getLocation() {
+        return location;
+    }
+
+    /**
+     * Setter method for property location.
+     *
+     * @param location value to be assigned to property location
+     */
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    /**
+     * Getter method for property rating.
+     *
+     * @return property value of rating
+     */
+    public String getRating() {
+        return rating;
+    }
+
+    /**
+     * Setter method for property rating.
+     *
+     * @param rating value to be assigned to property rating
+     */
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+
+    /**
+     * Getter method for property lastOnline.
+     *
+     * @return property value of lastOnline
+     */
+    public String getLastOnline() {
+        return lastOnline;
+    }
+
+    /**
+     * Setter method for property lastOnline.
+     *
+     * @param lastOnline value to be assigned to property lastOnline
+     */
+    public void setLastOnline(String lastOnline) {
+        this.lastOnline = lastOnline;
+    }
+
+    /**
      * Getter method for property balance.
      *
      * @return property value of balance
      */
-    public Double getBalance() {
+    public Long getBalance() {
         return balance;
     }
 
@@ -85,7 +154,7 @@ public class User {
      *
      * @param balance value to be assigned to property balance
      */
-    public void setBalance(Double balance) {
+    public void setBalance(Long balance) {
         this.balance = balance;
     }
 

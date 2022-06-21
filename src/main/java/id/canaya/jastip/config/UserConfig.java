@@ -22,8 +22,8 @@ public class UserConfig {
     @Bean
     CommandLineRunner userDataInitializer(UserRepository userRepository) {
         return args -> {
-            User alan = new User("Alan Wake", 1000000.0);
-            User jacob = new User("Little Jacob", 1000000.0);
+            User alan = new User("Alan Wake", 1000000L);
+            User jacob = new User("Little Jacob", 1000000L);
             userRepository.saveAll(Arrays.asList(alan, jacob));
         };
     }

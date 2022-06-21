@@ -31,9 +31,9 @@ public class Product {
 
     private String productDescription;
 
-    private Double price;
+    private Long price;
 
-    private LocalDate openPreOrderLimit;
+    private LocalDate openPreOrderDate;
 
     private LocalDate sellerReturnDate;
 
@@ -41,19 +41,19 @@ public class Product {
 
     public Product() {}
 
-    public Product(String productName, String productDescription, Double price, LocalDate openPreOrderLimit, LocalDate sellerReturnDate) {
+    public Product(String productName, String productDescription, Long price, LocalDate openPreOrderLimit, LocalDate sellerReturnDate) {
         this.productName = productName;
         this.productDescription = productDescription;
         this.price = price;
-        this.openPreOrderLimit = openPreOrderLimit;
+        this.openPreOrderDate = openPreOrderLimit;
         this.sellerReturnDate = sellerReturnDate;
     }
 
-    public Product(String productName, String productDescription, Double price, LocalDate openPreOrderLimit, LocalDate sellerReturnDate, String productImageUrl) {
+    public Product(String productName, String productDescription, Long price, LocalDate openPreOrderLimit, LocalDate sellerReturnDate, String productImageUrl) {
         this.productName = productName;
         this.productDescription = productDescription;
         this.price = price;
-        this.openPreOrderLimit = openPreOrderLimit;
+        this.openPreOrderDate = openPreOrderLimit;
         this.sellerReturnDate = sellerReturnDate;
         this.productImageUrl = productImageUrl;
     }
@@ -108,7 +108,7 @@ public class Product {
      *
      * @return property value of price
      */
-    public Double getPrice() {
+    public Long getPrice() {
         return price;
     }
 
@@ -117,7 +117,7 @@ public class Product {
      *
      * @param price value to be assigned to property price
      */
-    public void setPrice(Double price) {
+    public void setPrice(Long price) {
         this.price = price;
     }
 
@@ -126,17 +126,17 @@ public class Product {
      *
      * @return property value of openPreOrderLimit
      */
-    public LocalDate getOpenPreOrderLimit() {
-        return openPreOrderLimit;
+    public LocalDate getOpenPreOrderDate() {
+        return openPreOrderDate;
     }
 
     /**
      * Setter method for property openPreOrderLimit.
      *
-     * @param openPreOrderLimit value to be assigned to property openPreOrderLimit
+     * @param openPreOrderDate value to be assigned to property openPreOrderLimit
      */
-    public void setOpenPreOrderLimit(LocalDate openPreOrderLimit) {
-        this.openPreOrderLimit = openPreOrderLimit;
+    public void setOpenPreOrderDate(LocalDate openPreOrderDate) {
+        this.openPreOrderDate = openPreOrderDate;
     }
 
     /**
