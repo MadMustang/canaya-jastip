@@ -33,6 +33,8 @@ public class ProductResponse {
 
     private String country;
 
+    private Integer weight;
+
     private String productImageUrl;
 
     public ProductResponse() {}
@@ -48,6 +50,7 @@ public class ProductResponse {
         this.seller = seller;
         this.country = product.getCountry();
         this.productImageUrl = product.getProductImageUrl();
+        this.weight = product.getWeight();
     }
 
     /**
@@ -210,6 +213,24 @@ public class ProductResponse {
      */
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    /**
+     * Getter method for property weight.
+     *
+     * @return property value of weight
+     */
+    public Integer getWeight() {
+        return weight;
+    }
+
+    /**
+     * Setter method for property weight.
+     *
+     * @param weight value to be assigned to property weight
+     */
+    public void setWeight(Integer weight) {
+        this.weight = weight;
     }
 
     /**

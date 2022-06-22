@@ -47,4 +47,14 @@ public class ProductController {
     public ProductResponse getProductById(@PathVariable("productId") Long productId) {
         return productService.getProductByProductId(productId);
     }
+
+    @GetMapping(path = "country/{country}")
+    public List<ProductResponse> getProductByCountry(@PathVariable("country") String country) {
+        return productService.getProductsByCountry(country);
+    }
+
+    @GetMapping(path = "search/{productName}")
+    public List<ProductResponse> getProductsByProductName(@PathVariable("productName") String productName) {
+        return productService.getProductsByProductName(productName);
+    }
 }

@@ -87,6 +87,20 @@ public class ProductService {
         return productResponseList;
     }
 
+    public List<ProductResponse> getProductsByCountry(String country) {
+        return productRepository.findProductsByCountry(country)
+                .stream()
+                .map(this::convertToProductResponse)
+                .collect(Collectors.toList());
+    }
+
+    public List<ProductResponse> getProductsByProductName(String productName) {
+        return productRepository.findByProductNameContains(productName)
+                .stream()
+                .map(this::convertToProductResponse)
+                .collect(Collectors.toList());
+    }
+
     private ProductResponse convertToProductResponse(Product product) {
         User seller = userRepository.findById(product.getSellerId()).orElse(new User());
         return new ProductResponse(product, seller);

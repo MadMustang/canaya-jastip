@@ -217,12 +217,21 @@ public class Product {
     }
 
     /**
-     * Setter method for property id.
+     * Getter method for property weight.
      *
-     * @param id value to be assigned to property id
+     * @return property value of weight
      */
-    public void setId(Long id) {
-        this.id = id;
+    public Integer getWeight() {
+        return weight;
+    }
+
+    /**
+     * Setter method for property weight.
+     *
+     * @param weight value to be assigned to property weight
+     */
+    public void setWeight(Integer weight) {
+        this.weight = weight;
     }
 
     /**
