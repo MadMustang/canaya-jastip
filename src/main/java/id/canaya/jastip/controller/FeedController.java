@@ -5,8 +5,7 @@
 package id.canaya.jastip.controller;
 
 import id.canaya.jastip.constants.RequestMappingConstants;
-import id.canaya.jastip.dto.feed.MessageRes;
-import id.canaya.jastip.entity.FeedMessage;
+import id.canaya.jastip.dto.feed.MessageResponse;
 import id.canaya.jastip.service.FeedService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +26,7 @@ public class FeedController {
     private FeedService feedService;
 
     @GetMapping
-    public List<MessageRes> getNewsFeed() {
+    public List<MessageResponse> getNewsFeed() {
         return feedService.getNewsFeed();
     }
 }

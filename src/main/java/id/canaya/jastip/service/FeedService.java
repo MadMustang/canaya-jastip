@@ -4,7 +4,7 @@
  */
 package id.canaya.jastip.service;
 
-import id.canaya.jastip.dto.feed.MessageRes;
+import id.canaya.jastip.dto.feed.MessageResponse;
 import id.canaya.jastip.entity.FeedMessage;
 import id.canaya.jastip.entity.User;
 import id.canaya.jastip.repository.FeedRepository;
@@ -28,15 +28,15 @@ public class FeedService {
     @Autowired
     private UserRepository userRepository;
 
-    public List<MessageRes> getNewsFeed() {
+    public List<MessageResponse> getNewsFeed() {
         return feedRepository.findAll()
                 .stream()
                 .map(this::convertToMessageRes)
                 .collect(Collectors.toList());
     }
 
-    private MessageRes convertToMessageRes(FeedMessage feedMessage) {
+    private MessageResponse convertToMessageRes(FeedMessage feedMessage) {
         User user = userRepository.findById(feedMessage.getUserId()).orElse(new User());
-        return new MessageRes(feedMessage, user);
+        return new MessageResponse(feedMessage, user);
     }
 }

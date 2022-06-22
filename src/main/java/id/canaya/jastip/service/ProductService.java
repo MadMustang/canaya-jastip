@@ -4,7 +4,7 @@
  */
 package id.canaya.jastip.service;
 
-import id.canaya.jastip.dto.ProductRes;
+import id.canaya.jastip.dto.ProductResponse;
 import id.canaya.jastip.entity.Product;
 import id.canaya.jastip.entity.User;
 import id.canaya.jastip.repository.ProductRepository;
@@ -36,13 +36,13 @@ public class ProductService {
                 .collect(Collectors.toList());
     }
 
-    public ProductRes getProductByProductId(Long productId) {
+    public ProductResponse getProductByProductId(Long productId) {
         return productRepository.findById(productId)
                 .map(this::convertToProductResponse)
                 .orElse(null);
     }
 
-    public List<ProductRes> getNewestProducts(int itemListSize) {
+    public List<ProductResponse> getNewestProducts(int itemListSize) {
         List<Product> productList = productRepository.findAll();
         if (itemListSize < productList.size()) {
             return productList
@@ -58,7 +58,7 @@ public class ProductService {
                 .collect(Collectors.toList());
     }
 
-    public List<ProductRes> getMostPopularProducts(int itemListSize) {
+    public List<ProductResponse> getMostPopularProducts(int itemListSize) {
         List<Product> productList = productRepository.findAll();
         if (itemListSize < productList.size()) {
             return productList
@@ -67,20 +67,20 @@ public class ProductService {
                     .collect(Collectors.toList());
         }
 
-        List<ProductRes> productResList = productRepository.findAll()
+        List<ProductResponse> productResponseList = productRepository.findAll()
                 .stream()
                 .filter(product -> product.getId() >= productList.size() - itemListSize)
                 .limit(itemListSize)
                 .map(this::convertToProductResponse)
                 .collect(Collectors.toList());
 
-        Collections.shuffle(productResList);
+        Collections.shuffle(productResponseList);
 
-        return productResList;
+        return productResponseList;
     }
 
-    private ProductRes convertToProductResponse(Product product) {
+    private ProductResponse convertToProductResponse(Product product) {
         User seller = userRepository.findById(product.getSellerId()).orElse(new User());
-        return new ProductRes(product, seller);
+        return new ProductResponse(product, seller);
     }
 }

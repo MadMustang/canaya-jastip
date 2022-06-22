@@ -13,7 +13,7 @@ import java.time.LocalDate;
  * @author Rionaldy "Roy" Triantoro (rionaldy.triantoro@dana.id)
  * @version $Id: ProductRes.java, v 0.1 2022‐06‐22 09.28 Rionaldy "Roy" Triantoro Exp $$
  */
-public class ProductRes {
+public class ProductResponse {
 
     private Long id;
 
@@ -35,9 +35,9 @@ public class ProductRes {
 
     private String productImageUrl;
 
-    public ProductRes() {}
+    public ProductResponse() {}
 
-    public ProductRes(Product product, User seller) {
+    public ProductResponse(Product product, User seller) {
         this.id = product.getId();
         this.productName = product.getProductName();
         this.productDescription = product.getProductDescription();

@@ -29,6 +29,7 @@ public class Product {
 
     private String productName;
 
+    @Column(columnDefinition = "TEXT")
     private String productDescription;
 
     private Long price;
@@ -46,14 +47,6 @@ public class Product {
     private String productImageUrl;
 
     public Product() {}
-
-    public Product(String productName, String productDescription, Long price, LocalDate openPreOrderLimit, LocalDate sellerReturnDate) {
-        this.productName = productName;
-        this.productDescription = productDescription;
-        this.price = price;
-        this.openPreOrderDate = openPreOrderLimit;
-        this.sellerReturnDate = sellerReturnDate;
-    }
 
     public Product(String productName, String productDescription, Long price, LocalDate openPreOrderDate,
                    LocalDate sellerReturnDate, Integer quantity, Long sellerId, String country, String productImageUrl) {
