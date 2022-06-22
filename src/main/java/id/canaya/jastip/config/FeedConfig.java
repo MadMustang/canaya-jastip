@@ -23,19 +23,20 @@ public class FeedConfig {
     @Bean
     CommandLineRunner feedDataInitializer(FeedRepository feedRepository) {
         return args -> {
-            FeedMessage fm1 = new FeedMessage(
-                    "Alan Wake",
-                    "Anyone wanna smoke? I'll be bringin back some Cuban if anyone is asking",
-                    LocalDate.parse("2022-07-11"),
-                    "https://unsplash.com/photos/LNRyGwIJr5c"
-            );
-            FeedMessage fm2 = new FeedMessage(
-                    "Little Jacob",
-                    "Yo gwaan. Imma coming back bringing weed. Seen?",
-                    LocalDate.parse("2022-07-11"),
-                    "https://unsplash.com/photos/CMWRIzyMKZk"
-            );
-            feedRepository.saveAll(Arrays.asList(fm1, fm2));
+            feedRepository.saveAll(Arrays.asList(
+                    new FeedMessage(
+                            "Angga Nugraha",
+                            "Pada mau nitip apa di Singapore?",
+                            LocalDate.parse("2022-07-11"),
+                            "https://i.picsum.photos/id/101/2621/1747.jpg?hmac=cu15YGotS0gIYdBbR1he5NtBLZAAY6aIY5AbORRAngs"
+                    ),
+                    new FeedMessage(
+                            "Angga Nugraha",
+                            "Pada mau nitip apa di Singapore?",
+                            LocalDate.parse("2022-07-11"),
+                            "https://i.picsum.photos/id/101/2621/1747.jpg?hmac=cu15YGotS0gIYdBbR1he5NtBLZAAY6aIY5AbORRAngs"
+                    )
+            ));
         };
     }
 }

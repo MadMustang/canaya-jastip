@@ -4,12 +4,15 @@
  */
 package id.canaya.jastip.service;
 
+import id.canaya.jastip.dto.ProductRes;
 import id.canaya.jastip.entity.Product;
+import id.canaya.jastip.entity.User;
 import id.canaya.jastip.repository.ProductRepository;
+import id.canaya.jastip.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Comparator;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,6 +26,9 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
+    @Autowired
+    private UserRepository userRepository;
+
     public List<Product> getRandomProducts() {
         return productRepository.findAll()
                 .stream()
@@ -30,22 +36,51 @@ public class ProductService {
                 .collect(Collectors.toList());
     }
 
-    public Product getProductByProductId(Long productId) {
-        return productRepository.findById(productId).orElse(null);
+    public ProductRes getProductByProductId(Long productId) {
+        return productRepository.findById(productId)
+                .map(this::convertToProductResponse)
+                .orElse(null);
     }
 
-    public List<Product> getNewestProducts(int itemListSize) {
+    public List<ProductRes> getNewestProducts(int itemListSize) {
+        List<Product> productList = productRepository.findAll();
+        if (itemListSize < productList.size()) {
+            return productList
+                    .stream()
+                    .map(this::convertToProductResponse)
+                    .collect(Collectors.toList());
+        }
         return productRepository.findAll()
                 .stream()
+                .filter(product -> product.getId() < productList.size() - itemListSize)
                 .limit(itemListSize)
+                .map(this::convertToProductResponse)
                 .collect(Collectors.toList());
     }
 
-    public List<Product> getMostPopularProducts() {
-        return productRepository.findAll()
+    public List<ProductRes> getMostPopularProducts(int itemListSize) {
+        List<Product> productList = productRepository.findAll();
+        if (itemListSize < productList.size()) {
+            return productList
+                    .stream()
+                    .map(this::convertToProductResponse)
+                    .collect(Collectors.toList());
+        }
+
+        List<ProductRes> productResList = productRepository.findAll()
                 .stream()
-                .sorted(Comparator.comparing(Product::getProductName))
-                .limit(10)
+                .filter(product -> product.getId() >= productList.size() - itemListSize)
+                .limit(itemListSize)
+                .map(this::convertToProductResponse)
                 .collect(Collectors.toList());
+
+        Collections.shuffle(productResList);
+
+        return productResList;
+    }
+
+    private ProductRes convertToProductResponse(Product product) {
+        User seller = userRepository.findById(product.getSellerId()).orElse(new User());
+        return new ProductRes(product, seller);
     }
 }

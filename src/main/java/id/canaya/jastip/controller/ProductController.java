@@ -5,6 +5,7 @@
 package id.canaya.jastip.controller;
 
 import id.canaya.jastip.constants.RequestMappingConstants;
+import id.canaya.jastip.dto.ProductRes;
 import id.canaya.jastip.entity.Product;
 import id.canaya.jastip.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,17 +34,17 @@ public class ProductController {
     }
 
     @GetMapping(path = "newest")
-    public List<Product> getNewestProducts(@RequestParam(value = "itemListSize", defaultValue = "5") Integer itemListSize) {
+    public List<ProductRes> getNewestProducts(@RequestParam(value = "itemListSize", defaultValue = "5") Integer itemListSize) {
         return productService.getNewestProducts(itemListSize);
     }
 
     @GetMapping(path = "popular")
-    public List<Product> getMostPopularProducts() {
-        return productService.getMostPopularProducts();
+    public List<ProductRes> getMostPopularProducts(@RequestParam(value = "itemListSize", defaultValue = "10") Integer itemListSize) {
+        return productService.getMostPopularProducts(itemListSize);
     }
 
     @GetMapping(path = "{productId}")
-    public Product getProductById(@PathVariable("productId") Long productId) {
+    public ProductRes getProductById(@PathVariable("productId") Long productId) {
         return productService.getProductByProductId(productId);
     }
 }

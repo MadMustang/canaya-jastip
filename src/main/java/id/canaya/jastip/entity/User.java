@@ -45,11 +45,6 @@ public class User {
 
     public User() {}
 
-    public User(String name, Long balance) {
-        this.name = name;
-        this.balance = balance;
-    }
-
     public User(String name, String location, String rating, String lastOnline, Long balance, String imageUrl) {
         this.name = name;
         this.location = location;

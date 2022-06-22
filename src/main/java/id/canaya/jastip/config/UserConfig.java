@@ -22,9 +22,20 @@ public class UserConfig {
     @Bean
     CommandLineRunner userDataInitializer(UserRepository userRepository) {
         return args -> {
-            User alan = new User("Alan Wake", 1000000L);
-            User jacob = new User("Little Jacob", 1000000L);
-            userRepository.saveAll(Arrays.asList(alan, jacob));
+            userRepository.saveAll(Arrays.asList(
+                    new User("Zaki Muhammad",
+                            "Singapore",
+                            "4.5",
+                            "10 Minutes Ago",
+                            1000000L,
+                            "https://i.picsum.photos/id/1009/5000/7502.jpg?hmac=Uj6crVILzsKbyZreBjHuMiaq_-n30qoHjqP0i7r30r8"),
+                    new User("Angga Nugraha",
+                            "Singapore",
+                            "4.5",
+                            "10 Minutes Ago",
+                            1000000L,
+                            "https://i.picsum.photos/id/101/2621/1747.jpg?hmac=cu15YGotS0gIYdBbR1he5NtBLZAAY6aIY5AbORRAngs")
+            ));
         };
     }
 }
