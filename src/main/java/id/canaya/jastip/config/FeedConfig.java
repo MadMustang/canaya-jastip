@@ -26,7 +26,7 @@ public class FeedConfig {
             feedRepository.saveAll(Arrays.asList(
                     new FeedMessage(
                             5L,
-                            "Oy. Pada mau nitip ga? Gw lagi di Manila nih sampe tanggal 17.",
+                            "Oy. Pada mau nitip ga? Gw lagi di Bangkok nih sampe tanggal 17.",
                             LocalDate.parse("2022-07-17"),
                             4
                     ),

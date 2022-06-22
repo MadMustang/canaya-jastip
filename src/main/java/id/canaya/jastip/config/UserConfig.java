@@ -48,11 +48,17 @@ public class UserConfig {
                             1000000L,
                             "https://ik.imagekit.io/aelous/canya-jastip-test/Roy-profile-pic_Lg1gVyUbO.jpg"),
                     new User("Steven Sutana",
-                            "Philippines",
-                            "4,1",
+                            "Thailand",
+                            "4,9",
                             "10 Minutes Ago",
                             1000000L,
-                            "https://ik.imagekit.io/aelous/canya-jastip-test/Nenen-profile-pic_5EKsXPZVBO.jpg")
+                            "https://ik.imagekit.io/aelous/canya-jastip-test/Nenen-profile-pic_5EKsXPZVBO.jpg"),
+                    new User("Roby Chandra",
+                            "Indonesia",
+                            "4,4",
+                            "10 Minutes Ago",
+                            1000000L,
+                            "https://ik.imagekit.io/aelous/canya-jastip-test/roby-profile-pic_zayfq4zcw.jpg")
             ));
         };
     }

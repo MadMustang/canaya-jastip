@@ -95,6 +95,42 @@ public class ProductConfig {
                             "https://ik.imagekit.io/aelous/canya-jastip-test/kit-kat-dark_nILX3uKBo.png"
                     ),
                     new Product(
+                            "Razer 17-inch Laptop Backpack",
+                            "Tas laptop gaming Razer",
+                            2000000L,
+                            LocalDate.parse("2022-07-01"),
+                            LocalDate.parse("2022-07-16"),
+                            2,
+                            2L,
+                            "Malaysia",
+                            1500,
+                            "https://ik.imagekit.io/aelous/canya-jastip-test/Frame_116_7B1j_n3O8.png"
+                    ),
+                    new Product(
+                            "Converse Shoes",
+                            "Sepatu converse putih",
+                            1350000L,
+                            LocalDate.parse("2022-07-01"),
+                            LocalDate.parse("2022-07-17"),
+                            2,
+                            5L,
+                            "Thailand",
+                            1500,
+                            "https://ik.imagekit.io/aelous/canya-jastip-test/Frame_115_r4IDJLZOo.png"
+                    ),
+                    new Product(
+                            "Google Pixel Buds",
+                            "Google buds ORI",
+                            1550000L,
+                            LocalDate.parse("2022-07-01"),
+                            LocalDate.parse("2022-07-17"),
+                            2,
+                            6L,
+                            "Indonesia",
+                            1500,
+                            "https://ik.imagekit.io/aelous/canya-jastip-test/Frame_117_CX6JGEyf2.png"
+                    ),
+                    new Product(
                             "Garrett Popcorn Large Chicago Mix",
                             "Popcorn terkenal yang bikin kamu ketagihan dengan paduan rasa manis dari caramel crisp serta cheese corn yang asin dan gurih",
                             200000L,
