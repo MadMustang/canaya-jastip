@@ -13,7 +13,7 @@ import java.time.LocalDate;
  * @author Rionaldy "Roy" Triantoro (rionaldy.triantoro@dana.id)
  * @version $Id: MessageRes.java, v 0.1 2022‐06‐22 10.02 Rionaldy "Roy" Triantoro Exp $$
  */
-public class MessageRes {
+public class MessageResponse {
 
     private Long id;
 
@@ -25,9 +25,9 @@ public class MessageRes {
 
     private String imageUrl;
 
-    public MessageRes() {}
+    public MessageResponse() {}
 
-    public MessageRes(FeedMessage message, User user) {
+    public MessageResponse(FeedMessage message, User user) {
         this.id = message.getId();
         this.message = message.getMessage();
         this.returnDate = message.getReturnDate();
