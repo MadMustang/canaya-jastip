@@ -38,12 +38,15 @@ public class FeedMessage {
 
     private LocalDate returnDate;
 
+    private Integer commentCount;
+
     public FeedMessage() {}
 
-    public FeedMessage(Long userId, String message, LocalDate returnDate) {
+    public FeedMessage(Long userId, String message, LocalDate returnDate, Integer commentCount) {
         this.userId = userId;
         this.message = message;
         this.returnDate = returnDate;
+        this.commentCount = commentCount;
     }
 
     /**
@@ -107,5 +110,23 @@ public class FeedMessage {
      */
     public void setReturnDate(LocalDate returnDate) {
         this.returnDate = returnDate;
+    }
+
+    /**
+     * Getter method for property commentCount.
+     *
+     * @return property value of commentCount
+     */
+    public Integer getCommentCount() {
+        return commentCount;
+    }
+
+    /**
+     * Setter method for property commentCount.
+     *
+     * @param commentCount value to be assigned to property commentCount
+     */
+    public void setCommentCount(Integer commentCount) {
+        this.commentCount = commentCount;
     }
 }

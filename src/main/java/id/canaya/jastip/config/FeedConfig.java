@@ -26,28 +26,33 @@ public class FeedConfig {
             feedRepository.saveAll(Arrays.asList(
                     new FeedMessage(
                             5L,
-                            "Oy. Pada mau nitip ga? Gw lagi di Manila.",
-                            LocalDate.parse("2022-07-17")
+                            "Oy. Pada mau nitip ga? Gw lagi di Manila nih sampe tanggal 17.",
+                            LocalDate.parse("2022-07-17"),
+                            4
                     ),
                     new FeedMessage(
                             3L,
                             "Seneng-seneng di KL. Kalo ada yg mau nitip, monggo.",
-                            LocalDate.parse("2022-07-16")
+                            LocalDate.parse("2022-07-16"),
+                            1
                     ),
                     new FeedMessage(
                             1L,
-                            "Pada mau nitip apa di Korea? Gw open PO nih.",
-                            LocalDate.parse("2022-07-16")
+                            "Pada mau nitip apa di Korea? Gw open PO nih. Jangan ngaret ye.",
+                            LocalDate.parse("2022-07-16"),
+                            2
                     ),
                     new FeedMessage(
                             2L,
-                            "Lagi di Singapore nih. Ada yg mau request?",
-                            LocalDate.parse("2022-07-11")
+                            "Lagi di Singapore nih sampe tgl 11. Ada yg mau request ga?",
+                            LocalDate.parse("2022-07-11"),
+                            5
                     ),
                     new FeedMessage(
                             4L,
                             "Mantap nih jalan-jalan di Tokyo. Ada yg mau nitip sesuatu ga?",
-                            LocalDate.parse("2022-07-01")
+                            LocalDate.parse("2022-07-01"),
+                            6
                     )
             ));
         };

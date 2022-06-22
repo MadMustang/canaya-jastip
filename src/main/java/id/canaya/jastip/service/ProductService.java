@@ -44,7 +44,7 @@ public class ProductService {
 
     public List<ProductResponse> getNewestProducts(int itemListSize) {
         List<Product> productList = productRepository.findAll();
-        if (itemListSize < productList.size()) {
+        if (itemListSize > productList.size()) {
             List<ProductResponse> productResponseList = productList
                     .stream()
                     .map(this::convertToProductResponse)
@@ -53,7 +53,7 @@ public class ProductService {
             return productResponseList;
         }
 
-        List<ProductResponse> productResponseList = productRepository.findAll()
+        List<ProductResponse> productResponseList = productList
                 .stream()
                 .filter(product -> product.getId() > productList.size() - itemListSize)
                 .limit(itemListSize)
@@ -66,8 +66,8 @@ public class ProductService {
 
     public List<ProductResponse> getMostPopularProducts(int itemListSize) {
         List<Product> productList = productRepository.findAll();
-        if (itemListSize < productList.size()) {
-            List<ProductResponse> productResponseList = productRepository.findAll()
+        if (itemListSize > productList.size()) {
+            List<ProductResponse> productResponseList = productList
                     .stream()
                     .map(this::convertToProductResponse)
                     .collect(Collectors.toList());
@@ -75,7 +75,7 @@ public class ProductService {
             return productResponseList;
         }
 
-        List<ProductResponse> productResponseList = productRepository.findAll()
+        List<ProductResponse> productResponseList = productList
                 .stream()
                 .filter(product -> product.getId() <= itemListSize)
                 .limit(itemListSize)

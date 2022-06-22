@@ -101,7 +101,7 @@ public class ProductConfig {
                             LocalDate.parse("2022-06-24"),
                             LocalDate.parse("2022-07-05"),
                             10,
-                            4L,
+                            2L,
                             "Singapore",
                             600,
                             "https://ik.imagekit.io/aelous/canya-jastip-test/garret-chicago_sqmCKWnYH.png"
@@ -113,7 +113,7 @@ public class ProductConfig {
                             LocalDate.parse("2022-06-24"),
                             LocalDate.parse("2022-07-05"),
                             10,
-                            4L,
+                            2L,
                             "Singapore",
                             600,
                             "https://ik.imagekit.io/aelous/canya-jastip-test/garret-caramel_PfiMzTiKy.png"
@@ -125,7 +125,7 @@ public class ProductConfig {
                             LocalDate.parse("2022-06-24"),
                             LocalDate.parse("2022-07-05"),
                             10,
-                            4L,
+                            2L,
                             "Singapore",
                             600,
                             "https://ik.imagekit.io/aelous/canya-jastip-test/garret-cheese_t2Q1al4ON.png"
@@ -137,7 +137,7 @@ public class ProductConfig {
                             LocalDate.parse("2022-06-24"),
                             LocalDate.parse("2022-07-05"),
                             10,
-                            4L,
+                            2L,
                             "Singapore",
                             105,
                             "https://ik.imagekit.io/aelous/canya-jastip-test/irvin-spicy-salted-egg_wou0UtCmh.png"
@@ -149,7 +149,7 @@ public class ProductConfig {
                             LocalDate.parse("2022-06-24"),
                             LocalDate.parse("2022-07-05"),
                             10,
-                            4L,
+                            2L,
                             "Singapore",
                             105,
                             "https://ik.imagekit.io/aelous/canya-jastip-test/irvin-casava_PHIWxM3q7.png"

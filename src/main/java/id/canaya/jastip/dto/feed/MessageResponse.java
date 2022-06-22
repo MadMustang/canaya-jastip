@@ -23,6 +23,8 @@ public class MessageResponse {
 
     private LocalDate returnDate;
 
+    private Integer commentCount;
+
     private String imageUrl;
 
     public MessageResponse() {}
@@ -31,6 +33,7 @@ public class MessageResponse {
         this.id = message.getId();
         this.message = message.getMessage();
         this.returnDate = message.getReturnDate();
+        this.commentCount = message.getCommentCount();
         this.userName = user.getName();
         this.imageUrl = user.getImageUrl();
     }
@@ -105,6 +108,24 @@ public class MessageResponse {
      */
     public void setReturnDate(LocalDate returnDate) {
         this.returnDate = returnDate;
+    }
+
+    /**
+     * Getter method for property commentCount.
+     *
+     * @return property value of commentCount
+     */
+    public Integer getCommentCount() {
+        return commentCount;
+    }
+
+    /**
+     * Setter method for property commentCount.
+     *
+     * @param commentCount value to be assigned to property commentCount
+     */
+    public void setCommentCount(Integer commentCount) {
+        this.commentCount = commentCount;
     }
 
     /**
