@@ -42,10 +42,11 @@ public class FeedMessage {
 
     public FeedMessage() {}
 
-    public FeedMessage(String userName, String message, LocalDate returnDate) {
+    public FeedMessage(String userName, String message, LocalDate returnDate, String imageUrl) {
         this.userName = userName;
         this.message = message;
         this.returnDate = returnDate;
+        this.imageUrl = imageUrl;
     }
 
     /**

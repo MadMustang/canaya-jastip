@@ -26,12 +26,14 @@ public class FeedConfig {
             FeedMessage fm1 = new FeedMessage(
                     "Alan Wake",
                     "Anyone wanna smoke? I'll be bringin back some Cuban if anyone is asking",
-                    LocalDate.parse("2022-07-11")
+                    LocalDate.parse("2022-07-11"),
+                    "https://unsplash.com/photos/LNRyGwIJr5c"
             );
             FeedMessage fm2 = new FeedMessage(
                     "Little Jacob",
                     "Yo gwaan. Imma coming back bringing weed. Seen?",
-                    LocalDate.parse("2022-07-11")
+                    LocalDate.parse("2022-07-11"),
+                    "https://unsplash.com/photos/CMWRIzyMKZk"
             );
             feedRepository.saveAll(Arrays.asList(fm1, fm2));
         };
