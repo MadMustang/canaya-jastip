@@ -44,12 +44,13 @@ public class Product {
 
     private String country;
 
+    private Integer weight;
+
     private String productImageUrl;
 
     public Product() {}
 
-    public Product(String productName, String productDescription, Long price, LocalDate openPreOrderDate,
-                   LocalDate sellerReturnDate, Integer quantity, Long sellerId, String country, String productImageUrl) {
+    public Product(String productName, String productDescription, Long price, LocalDate openPreOrderDate, LocalDate sellerReturnDate, Integer quantity, Long sellerId, String country, Integer weight, String productImageUrl) {
         this.productName = productName;
         this.productDescription = productDescription;
         this.price = price;
@@ -58,6 +59,7 @@ public class Product {
         this.quantity = quantity;
         this.sellerId = sellerId;
         this.country = country;
+        this.weight = weight;
         this.productImageUrl = productImageUrl;
     }
 
@@ -212,6 +214,15 @@ public class Product {
      */
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    /**
+     * Setter method for property id.
+     *
+     * @param id value to be assigned to property id
+     */
+    public void setId(Long id) {
+        this.id = id;
     }
 
     /**

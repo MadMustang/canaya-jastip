@@ -25,19 +25,9 @@ public class FeedConfig {
         return args -> {
             feedRepository.saveAll(Arrays.asList(
                     new FeedMessage(
-                            1L,
-                            "Pada mau nitip apa di Singapore? Gw open PO nih.",
-                            LocalDate.parse("2022-07-11")
-                    ),
-                    new FeedMessage(
-                            2L,
-                            "Lagi di Bangkok nih. Ada yg mau request?",
-                            LocalDate.parse("2022-07-11")
-                    ),
-                    new FeedMessage(
-                            4L,
-                            "Mantap nih jalan-jalan di Ho Chi Minh. Ada yg mau nitip sesuatu ga?",
-                            LocalDate.parse("2022-07-15")
+                            5L,
+                            "Oy. Pada mau nitip ga? Gw lagi di Manila.",
+                            LocalDate.parse("2022-07-17")
                     ),
                     new FeedMessage(
                             3L,
@@ -45,9 +35,19 @@ public class FeedConfig {
                             LocalDate.parse("2022-07-16")
                     ),
                     new FeedMessage(
-                            5L,
-                            "Oy. Pada mau nitip ga? Gw lagi di Manila.",
-                            LocalDate.parse("2022-07-17")
+                            1L,
+                            "Pada mau nitip apa di Korea? Gw open PO nih.",
+                            LocalDate.parse("2022-07-16")
+                    ),
+                    new FeedMessage(
+                            2L,
+                            "Lagi di Singapore nih. Ada yg mau request?",
+                            LocalDate.parse("2022-07-11")
+                    ),
+                    new FeedMessage(
+                            4L,
+                            "Mantap nih jalan-jalan di Tokyo. Ada yg mau nitip sesuatu ga?",
+                            LocalDate.parse("2022-07-01")
                     )
             ));
         };

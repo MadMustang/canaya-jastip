@@ -45,31 +45,39 @@ public class ProductService {
     public List<ProductResponse> getNewestProducts(int itemListSize) {
         List<Product> productList = productRepository.findAll();
         if (itemListSize < productList.size()) {
-            return productList
+            List<ProductResponse> productResponseList = productList
                     .stream()
                     .map(this::convertToProductResponse)
                     .collect(Collectors.toList());
+            Collections.reverse(productResponseList);
+            return productResponseList;
         }
-        return productRepository.findAll()
+
+        List<ProductResponse> productResponseList = productRepository.findAll()
                 .stream()
-                .filter(product -> product.getId() < productList.size() - itemListSize)
+                .filter(product -> product.getId() > productList.size() - itemListSize)
                 .limit(itemListSize)
                 .map(this::convertToProductResponse)
                 .collect(Collectors.toList());
+
+        Collections.reverse(productResponseList);
+        return productResponseList;
     }
 
     public List<ProductResponse> getMostPopularProducts(int itemListSize) {
         List<Product> productList = productRepository.findAll();
         if (itemListSize < productList.size()) {
-            return productList
+            List<ProductResponse> productResponseList = productRepository.findAll()
                     .stream()
                     .map(this::convertToProductResponse)
                     .collect(Collectors.toList());
+            Collections.shuffle(productResponseList);
+            return productResponseList;
         }
 
         List<ProductResponse> productResponseList = productRepository.findAll()
                 .stream()
-                .filter(product -> product.getId() >= productList.size() - itemListSize)
+                .filter(product -> product.getId() <= itemListSize)
                 .limit(itemListSize)
                 .map(this::convertToProductResponse)
                 .collect(Collectors.toList());
