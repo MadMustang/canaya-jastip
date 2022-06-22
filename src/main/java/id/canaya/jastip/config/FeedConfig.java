@@ -25,16 +25,29 @@ public class FeedConfig {
         return args -> {
             feedRepository.saveAll(Arrays.asList(
                     new FeedMessage(
-                            "Angga Nugraha",
+                            1L,
                             "Pada mau nitip apa di Singapore?",
-                            LocalDate.parse("2022-07-11"),
-                            "https://i.picsum.photos/id/101/2621/1747.jpg?hmac=cu15YGotS0gIYdBbR1he5NtBLZAAY6aIY5AbORRAngs"
+                            LocalDate.parse("2022-07-11")
                     ),
                     new FeedMessage(
-                            "Angga Nugraha",
-                            "Pada mau nitip apa di Singapore?",
-                            LocalDate.parse("2022-07-11"),
-                            "https://i.picsum.photos/id/101/2621/1747.jpg?hmac=cu15YGotS0gIYdBbR1he5NtBLZAAY6aIY5AbORRAngs"
+                            2L,
+                            "Lagi di Bangkok nih. Ada yg mau request?",
+                            LocalDate.parse("2022-07-11")
+                    ),
+                    new FeedMessage(
+                            4L,
+                            "Ho Chi Minh, ada yg mau nitip?",
+                            LocalDate.parse("2022-07-15")
+                    ),
+                    new FeedMessage(
+                            3L,
+                            "Seneng-seneng di KL. Kalo ada yg mau nitip, monggo.",
+                            LocalDate.parse("2022-07-16")
+                    ),
+                    new FeedMessage(
+                            5L,
+                            "Oy. Pada mau nitip ga? Gw lagi di Manila.",
+                            LocalDate.parse("2022-07-17")
                     )
             ));
         };

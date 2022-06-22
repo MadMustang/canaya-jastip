@@ -32,21 +32,18 @@ public class FeedMessage {
     )
     private Long id;
 
-    private String userName;
+    private Long userId;
 
     private String message;
 
     private LocalDate returnDate;
 
-    private String imageUrl;
-
     public FeedMessage() {}
 
-    public FeedMessage(String userName, String message, LocalDate returnDate, String imageUrl) {
-        this.userName = userName;
+    public FeedMessage(Long userId, String message, LocalDate returnDate) {
+        this.userId = userId;
         this.message = message;
         this.returnDate = returnDate;
-        this.imageUrl = imageUrl;
     }
 
     /**
@@ -59,21 +56,21 @@ public class FeedMessage {
     }
 
     /**
-     * Getter method for property userName.
+     * Getter method for property userId.
      *
-     * @return property value of userName
+     * @return property value of userId
      */
-    public String getUserName() {
-        return userName;
+    public Long getUserId() {
+        return userId;
     }
 
     /**
-     * Setter method for property userName.
+     * Setter method for property userId.
      *
-     * @param userName value to be assigned to property userName
+     * @param userId value to be assigned to property userId
      */
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     /**
@@ -110,23 +107,5 @@ public class FeedMessage {
      */
     public void setReturnDate(LocalDate returnDate) {
         this.returnDate = returnDate;
-    }
-
-    /**
-     * Getter method for property imageUrl.
-     *
-     * @return property value of imageUrl
-     */
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    /**
-     * Setter method for property imageUrl.
-     *
-     * @param imageUrl value to be assigned to property imageUrl
-     */
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
     }
 }
