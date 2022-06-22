@@ -9,6 +9,7 @@ import id.canaya.jastip.entity.Product;
 import id.canaya.jastip.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -41,8 +42,8 @@ public class ProductController {
         return productService.getMostPopularProducts();
     }
 
-    @GetMapping(path = "product")
-    public Product getProductById(@RequestParam("productId") Long productId) {
+    @GetMapping(path = "{productId}")
+    public Product getProductById(@PathVariable("productId") Long productId) {
         return productService.getProductByProductId(productId);
     }
 }

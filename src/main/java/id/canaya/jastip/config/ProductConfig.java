@@ -24,20 +24,72 @@ public class ProductConfig {
     CommandLineRunner productDataInitializer(ProductRepository productRepository) {
         return args -> {
             Product shoe = new Product(
-                    "Adidas All-Star",
-                    "Adidas shoes blyat",
-                    10000L,
+                    "Lorem",
+                    "Lorem ipsum dolor si amet",
+                    100000L,
                     LocalDate.parse("2022-07-07"),
-                    LocalDate.parse("2022-07-11")
+                    LocalDate.parse("2022-07-11"),
+                    5,
+                    2166100000000L,
+                    "Singapore",
+                    "https://ik.imagekit.io/aelous/canya-jastip-test/Frame_113_D9ybago45.png"
                     );
             Product hat = new Product(
-                    "Adidas Hat",
-                    "Adidas hat blyat",
-                    10000L,
+                    "Lorem",
+                    "Lorem ipsum dolor si amet",
+                    20000000L,
                     LocalDate.parse("2022-07-07"),
-                    LocalDate.parse("2022-07-11")
+                    LocalDate.parse("2022-07-11"),
+                    5,
+                    2166100000000L,
+                    "Singapore",
+                    "https://ik.imagekit.io/aelous/canya-jastip-test/Frame_117_CX6JGEyf2.png"
             );
-            productRepository.saveAll(Arrays.asList(hat, shoe));
+            Product socks = new Product(
+                    "Lorem",
+                    "Lorem ipsum dolor si amet",
+                    4000000L,
+                    LocalDate.parse("2022-07-07"),
+                    LocalDate.parse("2022-07-11"),
+                    5,
+                    2166100000000L,
+                    "Singapore",
+                    "https://ik.imagekit.io/aelous/canya-jastip-test/Frame_116_7B1j_n3O8.png"
+            );
+            Product shirt = new Product(
+                    "Lorem",
+                    "Lorem ipsum dolor si amet",
+                    4000000L,
+                    LocalDate.parse("2022-07-07"),
+                    LocalDate.parse("2022-07-11"),
+                    5,
+                    2166100000000L,
+                    "Singapore",
+                    "https://ik.imagekit.io/aelous/canya-jastip-test/Frame_116_7B1j_n3O8.png"
+            );
+            Product boxer = new Product(
+                    "Lorem",
+                    "Lorem ipsum dolor si amet",
+                    4000000L,
+                    LocalDate.parse("2022-07-07"),
+                    LocalDate.parse("2022-07-11"),
+                    5,
+                    2166100000000L,
+                    "Singapore",
+                    "https://ik.imagekit.io/aelous/canya-jastip-test/Frame_116_7B1j_n3O8.png"
+            );
+            Product something = new Product(
+                    "Lorem",
+                    "Lorem ipsum dolor si amet",
+                    4000000L,
+                    LocalDate.parse("2022-07-07"),
+                    LocalDate.parse("2022-07-11"),
+                    5,
+                    2166100000000L,
+                    "Singapore",
+                    "https://ik.imagekit.io/aelous/canya-jastip-test/Frame_108_AxIumJ9oS.png"
+            );
+            productRepository.saveAll(Arrays.asList(hat, shoe, socks, shirt, boxer));
         };
     }
 }
