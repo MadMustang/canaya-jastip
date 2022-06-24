@@ -8,7 +8,6 @@ import id.canaya.jastip.dto.ProductResponse;
 import id.canaya.jastip.entity.Product;
 import id.canaya.jastip.entity.User;
 import id.canaya.jastip.repository.ProductRepository;
-import id.canaya.jastip.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,7 +26,7 @@ public class ProductService {
     private ProductRepository productRepository;
 
     @Autowired
-    private UserRepository userRepository;
+    private UserService userService;
 
     public List<Product> getRandomProducts() {
         return productRepository.findAll()
@@ -102,7 +101,7 @@ public class ProductService {
     }
 
     private ProductResponse convertToProductResponse(Product product) {
-        User seller = userRepository.findById(product.getSellerId()).orElse(new User());
+        User seller = userService.getUserProfile(product.getSellerId());
         return new ProductResponse(product, seller);
     }
 }

@@ -25,6 +25,18 @@ public class FeedConfig {
         return args -> {
             feedRepository.saveAll(Arrays.asList(
                     new FeedMessage(
+                            7L,
+                            "Guys, gw lagi di Singapore nih sampe tgl 20. Ada yg mau nitip ga?",
+                            LocalDate.parse("2022-07-20"),
+                            7
+                    ),
+                    new FeedMessage(
+                            8L,
+                            "Guys, gw lagi di KL nih sampe tgl 20. Ready for nitip if anyone is interested.",
+                            LocalDate.parse("2022-07-20"),
+                            2
+                    ),
+                    new FeedMessage(
                             5L,
                             "Oy. Pada mau nitip ga? Gw lagi di Bangkok nih sampe tanggal 17.",
                             LocalDate.parse("2022-07-17"),
@@ -41,12 +53,6 @@ public class FeedConfig {
                             "Pada mau nitip apa di Korea? Gw open PO nih. Jangan ngaret ye.",
                             LocalDate.parse("2022-07-16"),
                             2
-                    ),
-                    new FeedMessage(
-                            2L,
-                            "Lagi di Singapore nih sampe tgl 11. Ada yg mau request ga?",
-                            LocalDate.parse("2022-07-11"),
-                            5
                     ),
                     new FeedMessage(
                             4L,

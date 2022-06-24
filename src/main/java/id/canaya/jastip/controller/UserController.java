@@ -9,9 +9,14 @@ import id.canaya.jastip.entity.User;
 import id.canaya.jastip.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * @author Rionaldy "Roy" Triantoro (rionaldy.triantoro@dana.id)
@@ -27,5 +32,15 @@ public class UserController {
     @GetMapping("profile")
     public User getUserProfile(@RequestParam("userId") Long userId) {
         return userService.getUserProfile(userId);
+    }
+
+    @GetMapping
+    public List<User> getAllUsers() {
+        return userService.getAllUsers();
+    }
+
+    @PostMapping
+    public void createNewUser(@RequestBody User user) {
+        userService.addNewUser(user);
     }
 }
